@@ -1,0 +1,14 @@
+services: docker
+
+before_install:
+  - docker -v
+  # Use the env config
+  - cp .env.example .env
+install:
+  # Start the docker stuff
+  - docker-compose up -d
+  # Install dev php dependencies
+  - docker-compose exec web sh -c "composer install --no-interaction --prefer-dist"
+script:
+  # Run tests
+  - php artisan config:clear --no-interaction ./vendor/bin/phpunit
