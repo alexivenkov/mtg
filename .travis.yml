@@ -1,14 +1,18 @@
-services: docker
+language: php
+
+php:
+  - 7.1
+
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 before_install:
-  - docker -v
-  # Use the env config
   - cp .env.example .env
 install:
-  # Start the docker stuff
-  - docker-compose up -d
-  # Install dev php dependencies
-  - docker-compose exec web sh -c "composer install --no-interaction --prefer-dist"
+  - composer install
+  - php artisan key:generate
 script:
   # Run tests
-  - php artisan config:clear --no-interaction ./vendor/bin/phpunit
+  - php artisan config:clear --no-interaction
+  - ./vendor/bin/phpunit
