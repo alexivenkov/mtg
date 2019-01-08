@@ -3,6 +3,9 @@ language: php
 php:
   - 7.1
 
+git:
+  depth: 5
+
 cache:
   directories:
     - $HOME/.composer/cache
