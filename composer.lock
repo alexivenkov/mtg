@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "625acae7c46fb10d807cf2d22355d8e4",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1179,6 +1179,44 @@
                 "psr-3"
             ],
             "time": "2018-11-05T09:00:11+00:00"
+        },
+        {
+            "name": "mtgsdk/mtgsdk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MagicTheGathering/mtg-sdk-php.git",
+                "reference": "73ba7e00a803b2b7d7ce6bdc13c98c30a355eb57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MagicTheGathering/mtg-sdk-php/zipball/73ba7e00a803b2b7d7ce6bdc13c98c30a355eb57",
+                "reference": "73ba7e00a803b2b7d7ce6bdc13c98c30a355eb57",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.12",
+                "php-vcr/php-vcr": "^1.2",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mtgsdk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guido Contreras Woda",
+                    "email": "guiwoda@gmail.com"
+                }
+            ],
+            "description": "Magic: The Gathering SDK for php",
+            "time": "2018-10-12T15:26:21+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -4930,7 +4968,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mtgsdk/mtgsdk": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
