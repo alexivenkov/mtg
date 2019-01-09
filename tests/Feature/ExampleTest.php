@@ -2,9 +2,7 @@
 
 namespace Tests\Feature;
 
-use mtgsdk\Card;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase
 {
