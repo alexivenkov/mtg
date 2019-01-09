@@ -13,33 +13,33 @@ class AddCardsTable extends Migration
      */
     public function up()
     {
-        Schema::table('cards', function (Blueprint $table) {
+        Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
             $table->string('api_id');
-            $table->integer('multiverseid');
-            $table->string('manacost');
-            $table->double('cmc');
+            $table->string('mana_cost')->nullable();
+            $table->string('name');
+            $table->json('names')->nullable();
+            $table->double('cmc')->nullable();
             $table->json('colors');
-            $table->string('colorIdentity');
             $table->string('type');
-            $table->string('supertype')->nullable();
-            $table->string('types');
+            $table->json('types');
+            $table->json('supertypes')->nullable();
+            $table->json('subtypes')->nullable();
             $table->string('rarity');
             $table->string('set');
             $table->string('set_name');
-            $table->text('text');
+            $table->text('text')->nullable();
             $table->string('artist');
             $table->string('number');
             $table->integer('power')->nullable();
             $table->integer('toughness')->nullable();
             $table->string('layout');
             $table->string('image_url')->nullable();
-            $table->string('watermark');
             $table->json('rulings')->nullable();
             $table->json('foreign_names')->nullable();
             $table->json('printings');
-            $table->string('original_text');
-            $table->string('original_type');
+            $table->text('original_text')->nullable();
+            $table->string('original_type')->nullable();
             $table->json('legalities');
             $table->timestamps();
         });
